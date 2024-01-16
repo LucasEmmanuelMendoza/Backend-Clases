@@ -17,6 +17,8 @@ interno, como configuraciones, middlewares, etc. */
 
 import { express } from "express";
 import routerProd from "../routes/products.routes";
+import {__dirname} from './paths'
+import path from 'path'
 
 const PORT = 4040
 const app = express()
@@ -38,10 +40,11 @@ app.use(express.urlencoded({extended: true}))//permitir extensiones en la url
 
 app.use('/api/products', routerProd)
 
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
 app.listen(PORT, ()=>{
     console.log('Server on point', PORT)
 })
-
 
 //========2° parte de la clase ==========
 /*¿Qué es un middleware?
@@ -75,6 +78,21 @@ middleware incorporados: para subir imagenes
 mimddleware de terceros: subir imgs a una carpeta pública.
 
 Un middleware es un intermediario entre una petición y mi aplicación
-*/
 
-VER VIDEO 1:36:33
+MULTER
+Mandar una imagen y guardarla en el servidor
+npm i multer
+Creo archivo paths.js en src donde voy a poner las rutas: voy a definir 
+la ruta en donde se encuentra mi carpeta
+IMPORTO LAS RUTAS DE MI APLICACIÓN:
+
+import path from'path'
+import __dirname from 'path.js
+desp defino cual va a ser mi ruta pública donde voy a guardar mis imágenes-> nombre 'public'
+Y hago:
+    app.use('/static', express.static(path.join(__dirname, 'public')))
+Esto me devuelve la ruta de mi aplicación
+
+//así en cualquier compu voy a poder correr la app sin necesidad de cambiar la ruta manualmente
+Y con multer vamos y subimos imágenes
+*/
