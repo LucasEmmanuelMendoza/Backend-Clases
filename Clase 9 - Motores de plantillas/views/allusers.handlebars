@@ -1,0 +1,13 @@
+<div>
+    <h1>Hola {{name}}, estos son todos los usuarios</h1>
+    {{#if isAdmin}}
+        {{#each users}}
+        <div>
+            <p>{{this.name}}</p>
+            <p>{{this.lastName}}</p>
+        </div>
+        {{/each}}
+    {{else}}
+        <p>No tienes permiso de administrador</p>
+    {{/if}}
+</div>
