@@ -22,7 +22,7 @@ routerProd.get('/:id', async(req, res) => {
     const {id} = req.params
     const prods = await prooductManager.getProductById(id)
 
-    if(prod){
+    if(prods){
         res.status(200).send(prod)
     }else{
         res.status(400).send('Producto no encontrado')
