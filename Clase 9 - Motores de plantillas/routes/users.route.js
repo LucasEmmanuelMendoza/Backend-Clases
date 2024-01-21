@@ -10,7 +10,7 @@ router.get('/home', (req, res) => {
     res.render("home", {
         nombre: "Lucas",
     })//quiero enviar un archivo handlebar así que no uso send, uso render
-})
+})      
 
 router.get('/userDetails', (req, res) => {
    /*  res.render("home", {
