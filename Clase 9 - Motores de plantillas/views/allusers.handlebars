@@ -1,4 +1,4 @@
-<div>
+{{!-- <div>
     <h1>Hola {{name}}, estos son todos los usuarios</h1>
     {{#if isAdmin}}
         {{#each users}}
@@ -9,5 +9,37 @@
         {{/each}}
     {{else}}
         <p>No tienes permiso de administrador</p>
+    {{/if}}
+</div> --}}
+
+{{!-- <div> --}}
+{{!--      <h1>Hola {{name}}, estos son todos los usuarios</h1>
+     Recorro el array: 
+    {{#each users}} iterador  --}}
+    {{!- Por cada elem de users voy a renderizar un div: --}}
+        {{!-- <div> --}}
+           {{!-- <p>{{this.name}} {{this.lastName}}</p> this: cada elemento de users --}}
+        {{!-- </div> --}}
+    {{!--{{/each}}Cierro el iterador --}}
+{{!-- </div> --}}
+
+
+
+
+
+
+{{!-- CONDICIONADO: Si soy administrador puedo verlos, si soy un usuario normal, no --}}
+<div>
+    <h1>Hola {{name}}, estos son todos los usuarios</h1>
+    {{!-- Recorro el array: --}}
+    {{#if isAdmin}}
+        {{#each users}}{{!-- iterador --}}
+        {{!-- Por cada elem de users voy a renderizar un div: --}}
+            <div>
+                <p>{{this.name}} {{this.lastName}}</p>{{!-- this: cada elemento de users --}}
+            </div>
+        {{/each}}{{!--Cierro el iterador --}}
+    {{else}}
+        <p>No tienes permiso para ver los usuarios</p>    
     {{/if}}
 </div>

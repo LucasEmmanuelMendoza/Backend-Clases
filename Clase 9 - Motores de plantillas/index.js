@@ -21,11 +21,16 @@ hay una carpeta que se llama "views""
 //fin motor de plantilla
 
 //Routes o Endpoints
+app.get('/home', (req, res) => {
+    res.send('Hola, estás en el home')
+})
+
 
 app.use('/users', routerUsers)
-
 /*app.use('/users', routerUsers) ahora, para usar algo de routerUsers,
-SIEMPRE voy a tener que usar /users antes, ese es el prefijo*/
+SIEMPRE voy a tener que usar /users antes, ese es el prefijo
+Si voy a hacer una petición a algún endpoint que esté adentor de routerUsers, 
+primero tengo que escribir /users*/
 
 
 app.listen(PORT, () => {
