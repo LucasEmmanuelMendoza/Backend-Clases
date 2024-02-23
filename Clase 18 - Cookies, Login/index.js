@@ -31,7 +31,7 @@ app.get('/login', (req, res) => {
 })
 
 //Protección de rutas
-app.get('/profile', (req, res) => {
+app.get('/profile', auth(), (req, res) => {
     res.send('Si estás viendo esto es porque estás logueado. Bienvenido')
 })
 
