@@ -1,4 +1,4 @@
-/* /*Métodos de autenticación*
+/* Métodos de autenticación*
 const bcrypt = require('bcrypt')/
 
 let password = bcrypt.hashSync('12345', bcrypt.genSaltSync(10))
