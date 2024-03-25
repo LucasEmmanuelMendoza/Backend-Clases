@@ -33,4 +33,4 @@ const authorization = () => {
     }
 }
 
-module.exports = { initializePassport }
+module.exports = { initializePassport, authorization }
